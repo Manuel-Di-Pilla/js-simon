@@ -2,7 +2,7 @@ $(document).ready(
   function () {
     console.log(numeriCasuali);
     alert(numeriCasuali);
-    setTimeout(selection, 3000);
+    setTimeout(selection, 30000);
   }
 );
 var numeriCasuali = random(5);
