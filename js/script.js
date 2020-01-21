@@ -1,25 +1,25 @@
 $(document).ready(
   function () {
-    var numeriCasuali = [];
-    var numeriScelti = [];
-    var num;
-    random(numeriCasuali);
-    setTimeout(selection(num, numeriCasuali, numeriScelti), 3000)
+    console.log(numeriCasuali);
+    alert(numeriCasuali);
+    setTimeout(selection, 3000);
   }
 );
-
-function random(numbers) {
-  for (var i = 0; i < 5; i++) {
+var numeriCasuali = random(5);
+function random(numeriDaGenerare) {
+  var numbers = [];
+  for (var i = 0; i < numeriDaGenerare; i++) {
     var random = Math.floor(Math.random()* 100 + 1);
     numbers.push(random);
   }
-  console.log(numbers);
-  alert(numbers);
+  return numbers
 }
-function selection(numero, numbers, userNumbers) {
+
+function selection() {
+  var userNumbers = [];
   for (var i = 0; i < 5; i++) {
-    numero = parseInt(prompt('inserisci un numero'));
-    if(numbers.includes(numero) == true) {
+    var numero = parseInt(prompt('inserisci un numero'));
+    if(numeriCasuali.includes(numero) == true) {
       userNumbers.push(numero);
     }
   }
